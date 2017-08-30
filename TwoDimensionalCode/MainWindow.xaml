@@ -19,12 +19,12 @@
                         <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Height="45" VerticalContentAlignment="Center" FontSize="15">输入文本：</Label>
+                        <Label Height="45" VerticalContentAlignment="Center" FontSize="15" FontWeight="Black">输入文本：</Label>
                         <TextBox Name="tbVal" Width="150" Height="40" VerticalContentAlignment="Center" BorderBrush="Red"></TextBox>
-                        <Button Name="create2DC" Width="70" Click="create2DC_Click" Height="40"  Margin="10,0,0,0" FontSize="12">生成二维码</Button>
-                        <Button Name="create1DC" Width="70" Click="create1DC_Click" Height="40" Margin="10,0,0,0" FontSize="12">生成条形码</Button>
-                        <Button Name="SaveDCBtn" Width="50" Click="SaveDC_Click" Height="40" Margin="20,0,0,0" FontSize="12">保存</Button>
-                        <Button Name="Clear2DCBtn" Width="50" Click="ClearDCBtn_Click"  Height="40" Margin="20,0,0,0" FontSize="12">清空</Button>
+                        <Button Name="create2DC" Width="70" Click="create2DC_Click" Height="40"  Margin="10,0,0,0" FontSize="12" Background="Green">生成二维码</Button>
+                        <Button Name="create1DC" Width="70" Click="create1DC_Click" Height="40" Margin="10,0,0,0" FontSize="12" Background="Blue">生成条形码</Button>
+                        <Button Name="SaveDCBtn" Width="50" Click="SaveDC_Click" Height="40" Margin="20,0,0,0" FontSize="12" Background="Yellow">保存</Button>
+                        <Button Name="Clear2DCBtn" Width="50" Click="ClearDCBtn_Click"  Height="40" Margin="20,0,0,0" FontSize="12" Background="Red">清空</Button>
                     </StackPanel>
                     <Image Grid.Row="1" MinWidth="300" MinHeight="300" Name="tdcImg" Margin="10">
 
