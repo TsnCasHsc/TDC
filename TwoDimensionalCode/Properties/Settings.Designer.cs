@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TDC.Properties
+namespace TwoDimensionalCode.Properties
 {
 
 

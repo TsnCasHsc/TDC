@@ -1,0 +1,78 @@
+﻿<Window x:Class="TwoDimensionalCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwoDimensionalCode"
+        WindowStartupLocation="CenterScreen"
+        FocusManager.FocusedElement="{Binding ElementName=tbVal}"
+        mc:Ignorable="d"
+        Title="二维码" Height="700" Width="750" Icon="xmas-tree.ico">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TabControl HorizontalAlignment="Stretch">
+            <TabItem Name="createDC" Header="创建二维码" Height="18" Margin="0">
+                <Grid Name="TDCGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50">
+                        </RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Height="45" VerticalContentAlignment="Center" FontSize="15">输入文本：</Label>
+                        <TextBox Name="tbVal" Width="150" Height="40" VerticalContentAlignment="Center" BorderBrush="Red"></TextBox>
+                        <Button Name="create2DC" Width="70" Click="create2DC_Click" Height="40"  Margin="10,0,0,0" FontSize="12">生成二维码</Button>
+                        <Button Name="create1DC" Width="70" Click="create1DC_Click" Height="40" Margin="10,0,0,0" FontSize="12">生成条形码</Button>
+                        <Button Name="SaveDCBtn" Width="50" Click="SaveDC_Click" Height="40" Margin="20,0,0,0" FontSize="12">保存</Button>
+                        <Button Name="Clear2DCBtn" Width="50" Click="ClearDCBtn_Click"  Height="40" Margin="20,0,0,0" FontSize="12">清空</Button>
+                    </StackPanel>
+                    <Image Grid.Row="1" MinWidth="300" MinHeight="300" Name="tdcImg" Margin="10">
+
+                    </Image>
+                </Grid>
+              
+            </TabItem>
+            <TabItem Name="scranDC"  Header="扫描二维码" Height="18" Margin="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50">
+                        </RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Height="45" VerticalContentAlignment="Center" FontSize="15">选择二维码：</Label>
+                        <TextBox Name="filename" Width="150" Height="40" VerticalContentAlignment="Center" BorderBrush="Red" PreviewMouseLeftButtonDown="filename_PreviewMouseLeftButtonDown"></TextBox>
+                        <Button Name="decode2DC" Width="70" Click="decode2DC_Click"  Height="40"  Margin="10,0,0,0" FontSize="12">解析二维码</Button>
+                    </StackPanel>
+                    <Image MinWidth="300" MinHeight="300" Margin="5" Grid.Row="1" Name="show2DC"></Image>
+                    <TextBox Grid.Row="2" Name="tbMulti" TextWrapping="Wrap"  AcceptsReturn="True" VerticalScrollBarVisibility="Visible"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Name="createLogoDC" Header="创建带Logo二维码" Height="18" Margin="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50">
+                        </RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Height="45" VerticalContentAlignment="Center" FontSize="15">选择Logo：</Label>
+                        <TextBox Name="LogoName" Width="150" Height="40" VerticalContentAlignment="Center" BorderBrush="Red" PreviewMouseLeftButtonDown="LogoName_PreviewMouseLeftButtonDown"></TextBox>
+                        <Label Height="45" VerticalContentAlignment="Center" FontSize="15">输入文本：</Label>
+                        <TextBox Name="strText" Width="150" Height="40" VerticalContentAlignment="Center" BorderBrush="Red"></TextBox>
+                        <Button Name="createLogo2DC" Width="70" Click="createLogo2DC_Click"  Height="40"  Margin="10,0,0,0" FontSize="12">生成二维码</Button>
+                        <Button Name="SavelogoDCBtn" Width="50" Click="SaveDC_Click" Height="40" Margin="20,0,0,0" FontSize="12">保存</Button>
+                        <Button Name="ClearDCBtn" Width="50" Click="ClearDCBtn_Click"  Height="40" Margin="20,0,0,0" FontSize="12">清空</Button>
+                    </StackPanel>
+                    <Image Grid.Row="1" MinWidth="300" MinHeight="300" Name="LogoTdcImg" Margin="10">
+
+                    </Image>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+       
+    </Grid>
+</Window>
